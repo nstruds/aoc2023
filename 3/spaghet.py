@@ -91,19 +91,15 @@ print(dict(sorted(dics.items())))
 print(sum)
 """
 
-symbolAdjacentCounter = {}
-symbolFoundCounter = {}
 digitsDict = {}
 
 for i, l in enumerate(Lines):
     numbersInCurrentLine = re.findall(r'\b\d+\b', l)
-    if len(numbersInCurrentLine) > 0:
-        if len(numbersInCurrentLine) > 0:
-            for n in numbersInCurrentLine:
-                indeces = [i for i in range(len(l)) if l.startswith(str(n), i)]
-                for x in indeces:
-                    if is_standalone_number(n, l, x):
-                        digitsDict[(str(i) + "," + str(x))] = n
+    for n in numbersInCurrentLine:
+        indeces = [i for i in range(len(l)) if l.startswith(str(n), i)]
+        for x in indeces:
+            if is_standalone_number(n, l, x):
+                digitsDict[(str(i) + "," + str(x))] = n
     counter += 1
 
 added = {}
