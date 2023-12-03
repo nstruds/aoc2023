@@ -119,13 +119,7 @@ for i, l in enumerate(Lines):
             added[(str(i) + "," + str(s))] = []
             for d in digitsDict:
                 dindex = int(d.split(",")[1])
-                if str(d).startswith(str(i-1)+","):
-                    if (s >= dindex-1 and s <= (dindex + len(str(digitsDict[d])))):
-                        added[(str(i) + "," + str(s))].append(digitsDict[d])
-                if str(d).startswith(str(i)+","):
-                    if (s >= dindex-1 and s <= (dindex + len(str(digitsDict[d])))):
-                        added[(str(i) + "," + str(s))].append(digitsDict[d])
-                if str(d).startswith(str(i+1)+","):
+                if str(d).startswith(str(i-1)+",") or str(d).startswith(str(i)+",") or str(d).startswith(str(i+1)+","):
                     if (s >= dindex-1 and s <= (dindex + len(str(digitsDict[d])))):
                         added[(str(i) + "," + str(s))].append(digitsDict[d])
 
