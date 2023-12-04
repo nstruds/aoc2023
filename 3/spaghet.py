@@ -107,7 +107,7 @@ added = {}
 for i, l in enumerate(Lines):
     symbolIndex = []
     for index, c in enumerate(l):
-        if not c.isdigit() and c != ".":
+        if c == "*":
             symbolIndex.append(index)
     
     if len(symbolIndex) > 0:
